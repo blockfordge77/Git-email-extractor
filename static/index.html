@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Repo Author Audit</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Repo Author Audit</h1>
+    <p class="sub">
+      Paste a GitHub <b>repository URL</b>. This scans commit history and shows author names and email addresses.
+    </p>
+
+    <div class="card">
+      <label for="repo">GitHub repo URL</label>
+      <div class="row">
+        <input id="repo" type="text" placeholder="e.g. https://github.com/OWNER/REPO" />
+        <button id="audit">Audit</button>
+      </div>
+
+      <div class="row smallRow">
+        <div class="field">
+          <label for="max">Max commits</label>
+          <input id="max" type="number" min="1" max="200000" value="2000" />
+        </div>
+        <div class="field grow">
+          <div class="hint">Bigger repos may take longer. Start with 2000.</div>
+        </div>
+      </div>
+
+      <div id="status" class="status"></div>
+
+      <div id="summary" class="summary hidden">
+        <div class="pill">Scanned commits: <b id="s_commits"></b></div>
+        <div class="pill">Unique authors: <b id="s_authors"></b></div>
+        <div class="pill">Unique non‑noreply emails: <b id="s_non"></b></div>
+        <div class="pill"><a id="s_repo" href="#" target="_blank" rel="noreferrer">Open repo</a></div>
+      </div>
+
+      <div id="tableWrap" class="hidden">
+        <table>
+          <thead>
+            <tr>
+              <th>Author</th>
+              <th>Commits</th>
+              <th>Email type</th>
+              <th>Email address</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <div class="muted foot">
+          Use email addresses responsibly.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

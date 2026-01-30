@@ -1,0 +1,34 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { margin: 0; background: #0b0f17; color: #e6e8ee; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 36px 18px; }
+h1 { margin: 0 0 8px; font-size: 28px; }
+.sub { margin: 0 0 18px; color: #aab1c3; line-height: 1.4; }
+.card { background: #121a2a; border: 1px solid #24304a; border-radius: 14px; padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+label { display:block; font-weight: 600; margin-bottom: 8px; color: #cfd5e6; }
+.row { display:flex; gap: 10px; align-items: center; }
+.smallRow { margin-top: 10px; }
+.field { display:flex; flex-direction: column; gap: 6px; }
+.field.grow { flex: 1; }
+.hint { color:#aab1c3; font-size: 13px; margin-top: 10px; }
+input { flex: 1; padding: 12px 12px; border-radius: 10px; border: 1px solid #2a3756; background:#0c1322; color:#e6e8ee; }
+input[type="number"] { width: 160px; flex: 0; }
+button { padding: 12px 14px; border-radius: 10px; border: 1px solid #334368; background:#1a2a4a; color:#e6e8ee; cursor:pointer; }
+button:hover { filter: brightness(1.1); }
+button.small { padding: 6px 10px; border-radius: 8px; }
+.status { margin-top: 12px; min-height: 18px; color: #aab1c3; }
+.hidden { display: none; }
+
+.summary { display:flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.pill { background: #0c1322; border: 1px solid #2a3756; padding: 8px 10px; border-radius: 999px; font-size: 13px; color:#cfd5e6; }
+.pill b { color:#fff; }
+a { color: #9cc4ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 12px; overflow: hidden; border-radius: 12px; }
+th, td { padding: 10px 10px; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; }
+th { text-align: left; color:#aab1c3; font-weight: 600; font-size: 13px; }
+td { color:#e6e8ee; font-size: 14px; }
+code { background: #0c1322; border: 1px solid #2a3756; padding: 4px 6px; border-radius: 8px; font-size: 12px; display:inline-block; max-width: 360px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.muted { color:#aab1c3; font-size: 13px; }
+.foot { margin-top: 10px; }
