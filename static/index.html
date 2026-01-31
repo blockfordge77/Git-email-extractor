@@ -43,7 +43,7 @@
         <table>
           <thead>
             <tr>
-              <th>Author</th>
+              <th>First Name</th>
               <th>Commits</th>
               <th>Email type</th>
               <th>Email address</th>
@@ -55,6 +55,43 @@
         <div class="muted foot">
           Use email addresses responsibly.
         </div>
+      </div>
+
+      <div id="emailSection" class="hidden" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #24304a;">
+        <h2 style="margin: 0 0 16px; font-size: 20px;">Send Emails</h2>
+        <div class="hint" style="margin-bottom: 16px; padding: 10px; background: #0c1322; border: 1px solid #2a3756; border-radius: 8px;">
+          <strong>Note:</strong> SMTP settings are configured in the <code>.env</code> file. Make sure it's set up before sending emails.
+        </div>
+        
+        <div class="field" style="margin-bottom: 16px;">
+          <label for="email_subject">Email Subject</label>
+          <input id="email_subject" type="text" placeholder="e.g. Thank you for your contributions" />
+        </div>
+
+        <div class="field" style="margin-bottom: 16px;">
+          <label for="email_template">Email Template</label>
+          <textarea id="email_template" rows="8" placeholder="Dear {first_name},&#10;&#10;Thank you for your {commits} contribution(s) to the repository.&#10;&#10;Best regards" style="padding: 12px; border-radius: 10px; border: 1px solid #2a3756; background:#0c1322; color:#e6e8ee; font-family: inherit; resize: vertical; width: 100%;"></textarea>
+          <div class="hint">Available placeholders: {first_name} (or {author_name}), {email}, {commits}, {repo_url}</div>
+        </div>
+
+        <div class="field" style="margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <label style="margin: 0;">Select Recipients</label>
+            <div style="display: flex; gap: 8px;">
+              <button id="selectAllEmails" class="small" style="font-size: 12px;">Select All</button>
+              <button id="deselectAllEmails" class="small" style="font-size: 12px;">Deselect All</button>
+            </div>
+          </div>
+          <div id="emailRecipientsList" style="max-height: 300px; overflow-y: auto; border: 1px solid #2a3756; border-radius: 10px; background: #0c1322; padding: 8px;">
+            <div class="hint" style="text-align: center; padding: 20px; margin: 0;">Run an audit first to see available emails</div>
+          </div>
+          <div class="hint" style="margin-top: 8px;">
+            <span id="selectedCount">0</span> email(s) selected
+          </div>
+        </div>
+
+        <button id="sendEmails" style="width: 100%; margin-top: 8px;">Send Emails</button>
+        <div id="emailStatus" class="status" style="margin-top: 12px;"></div>
       </div>
     </div>
   </div>
